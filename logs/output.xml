@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-05-26T22:53:13.366942" rpa="false" schemaversion="5">
+<suite id="s1" name="Login &amp; Menu &amp; Signup">
+<suite id="s1-s1" name="Login" source="C:\Users\55119\Pictures\testes-processo-seletivo\tests\login.robot">
+<test id="s1-s1-t1" name="Deve validar login correto" line="11">
+<kw name="Get User Fake Account Standard" owner="Account">
+<msg time="2024-05-26T22:53:15.541545" level="INFO">${account} = {'email': 'alessandro@gmail.com', 'senha': '934925'}</msg>
+<var>${account}</var>
+<status status="PASS" start="2024-05-26T22:53:15.541545" elapsed="0.000000"/>
+</kw>
+<kw name="Open browser" owner="base">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-05-26T22:53:15.541545" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\55119\\Pictures\\testes-processo-seletivo\\logs\\browser\\traces\\d636bae8-7c2f-462e-a51a-10897625e6db"}</msg>
+<msg time="2024-05-26T22:53:16.020769" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\55119\\Pictures\\testes-processo-seletivo\\logs\\browser\\traces\\d636bae8-7c2f-462e-a51a-10897625e6db"}</msg>
+<arg>browser=chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-05-26T22:53:15.541545" elapsed="0.479619"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-05-26T22:53:21.858043" level="INFO">Successfully initialized new page object and opened url: http://www.automationpractice.pl/index.php</msg>
+<msg time="2024-05-26T22:53:21.858565" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>http://www.automationpractice.pl/index.php</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-05-26T22:53:16.021684" elapsed="5.836926"/>
+</kw>
+<status status="PASS" start="2024-05-26T22:53:15.541545" elapsed="6.317579"/>
+</kw>
+<kw name="Click Menu Login" owner="Login">
+<kw name="Click" owner="Browser">
+<msg time="2024-05-26T22:53:21.859690" level="INFO">Clicks the element 'css=.login'.</msg>
+<arg>css=.login</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-26T22:53:21.859690" elapsed="1.028540"/>
+</kw>
+<status status="PASS" start="2024-05-26T22:53:21.859690" elapsed="1.028540"/>
+</kw>
+<kw name="Fill Text Login Correct" owner="Login">
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-05-26T22:53:22.888230" level="INFO">Fills the text 'alessandro@gmail.com' in the given field.</msg>
+<arg>id=email</arg>
+<arg>${account}[email]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-05-26T22:53:22.888230" elapsed="0.426828"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-05-26T22:53:23.315058" level="INFO">Fills the text '934925' in the given field.</msg>
+<arg>id=passwd</arg>
+<arg>${account}[senha]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-05-26T22:53:23.315058" elapsed="0.043966"/>
+</kw>
+<arg>${account}</arg>
+<status status="PASS" start="2024-05-26T22:53:22.888230" elapsed="0.470794"/>
+</kw>
+<kw name="Click Button Submit" owner="Login">
+<kw name="Click" owner="Browser">
+<msg time="2024-05-26T22:53:23.359024" level="INFO">Clicks the element 'id=SubmitLogin'.</msg>
+<arg>id=SubmitLogin</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-26T22:53:23.359024" elapsed="1.377905"/>
+</kw>
+<status status="PASS" start="2024-05-26T22:53:23.359024" elapsed="1.377905"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-26T22:53:34.737871" level="INFO">Slept 10 seconds.</msg>
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-26T22:53:24.736929" elapsed="10.000942"/>
+</kw>
+<kw name="Get Text Menu Login" owner="Login">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-05-26T22:53:34.828113" level="INFO">Text: 'MY ACCOUNT'</msg>
+<arg>css=h1</arg>
+<arg>equal</arg>
+<arg>MY ACCOUNT</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-26T22:53:34.737871" elapsed="0.090242"/>
+</kw>
+<status status="PASS" start="2024-05-26T22:53:34.737871" elapsed="0.090242"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2024-05-26T22:53:34.984036" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2024-05-26T22:53:34.828113" elapsed="0.155923"/>
+</kw>
+<status status="PASS" start="2024-05-26T22:53:15.541545" elapsed="19.442491"/>
+</test>
+<test id="s1-s1-t2" name="Deve validar login incorreto" line="29">
+<kw name="Get User Fake Account" owner="Account">
+<msg time="2024-05-26T22:53:35.151445" level="INFO">${account} = {'email': 'jose-pedro56@example.org', 'name': 'Luna Oliveira', 'senha': &lt;bound method Provider.password of &lt;faker.providers.misc.en_US.Provider object at 0x0000018F1AC6C200&gt;&gt;}</msg>
+<var>${account}</var>
+<status status="PASS" start="2024-05-26T22:53:35.151445" elapsed="0.000000"/>
+</kw>
+<kw name="Open browser" owner="base">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-05-26T22:53:35.151445" level="INFO">Switching browser to browser=a8612333-0cd9-49af-83c4-579ec8c19432</msg>
+<msg time="2024-05-26T22:53:35.160283" level="INFO">Successfully changed active browser: browser=a8612333-0cd9-49af-83c4-579ec8c19432</msg>
+<msg time="2024-05-26T22:53:35.160283" level="INFO">Reusing existing browser with id: browser=a8612333-0cd9-49af-83c4-579ec8c19432</msg>
+<arg>browser=chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-05-26T22:53:35.151445" elapsed="0.008838"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-05-26T22:53:40.222334" level="INFO">Successfully initialized new page object and opened url: http://www.automationpractice.pl/index.php</msg>
+<msg time="2024-05-26T22:53:40.222334" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>http://www.automationpractice.pl/index.php</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-05-26T22:53:35.160283" elapsed="5.062051"/>
+</kw>
+<status status="PASS" start="2024-05-26T22:53:35.151445" elapsed="5.070889"/>
+</kw>
+<kw name="Click Menu Login" owner="Login">
+<kw name="Click" owner="Browser">
+<msg time="2024-05-26T22:53:40.230131" level="INFO">Clicks the element 'css=.login'.</msg>
+<arg>css=.login</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-26T22:53:40.230131" elapsed="0.887862"/>
+</kw>
+<status status="PASS" start="2024-05-26T22:53:40.222334" elapsed="0.895659"/>
+</kw>
+<kw name="Fill Text Login Invalid" owner="Login">
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-05-26T22:53:41.121513" level="INFO">Fills the text 'jose-pedro56@example.org' in the given field.</msg>
+<arg>id=email</arg>
+<arg>${account}[email]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-05-26T22:53:41.121001" elapsed="0.386353"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-05-26T22:53:41.507354" level="INFO">Fills the text '&lt;bound method Provider.password of &lt;faker.providers.misc.en_US.Provider object at 0x0000018F1AC6C200&gt;&gt;' in the given field.</msg>
+<arg>id=passwd</arg>
+<arg>${account}[senha]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-05-26T22:53:41.507354" elapsed="0.036134"/>
+</kw>
+<arg>${account}</arg>
+<status status="PASS" start="2024-05-26T22:53:41.117993" elapsed="0.425495"/>
+</kw>
+<kw name="Click Button Submit" owner="Login">
+<kw name="Click" owner="Browser">
+<msg time="2024-05-26T22:53:41.553765" level="INFO">Clicks the element 'id=SubmitLogin'.</msg>
+<arg>id=SubmitLogin</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-26T22:53:41.551489" elapsed="0.819455"/>
+</kw>
+<status status="PASS" start="2024-05-26T22:53:41.551489" elapsed="0.819455"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-26T22:53:52.371065" level="INFO">Slept 10 seconds.</msg>
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-26T22:53:42.370944" elapsed="10.000121"/>
+</kw>
+<kw name="Get Text Login Fail" owner="Login">
+<kw name="Get Text" owner="Browser">
+<msg time="2024-05-26T22:53:52.453902" level="INFO">Text: 'Authentication failed.'</msg>
+<arg>xpath=//div[@class='alert alert-danger']/ol/li</arg>
+<arg>equal</arg>
+<arg>Authentication failed.</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-26T22:53:52.371065" elapsed="0.082837"/>
+</kw>
+<status status="PASS" start="2024-05-26T22:53:52.371065" elapsed="0.082837"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2024-05-26T22:53:52.601039" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-2.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-2.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2024-05-26T22:53:52.460332" elapsed="0.140707"/>
+</kw>
+<status status="PASS" start="2024-05-26T22:53:35.143443" elapsed="17.457596"/>
+</test>
+<doc>Cenário de login</doc>
+<status status="PASS" start="2024-05-26T22:53:13.420655" elapsed="39.298595"/>
+</suite>
+<suite id="s1-s2" name="Menu" source="C:\Users\55119\Pictures\testes-processo-seletivo\tests\menu.robot">
+<test id="s1-s2-t1" name="Entrar no menu Woman" line="11">
+<kw name="Open browser" owner="base">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-05-26T22:53:52.776633" level="INFO">Switching browser to browser=a8612333-0cd9-49af-83c4-579ec8c19432</msg>
+<msg time="2024-05-26T22:53:52.780926" level="INFO">Successfully changed active browser: browser=a8612333-0cd9-49af-83c4-579ec8c19432</msg>
+<msg time="2024-05-26T22:53:52.780926" level="INFO">Reusing existing browser with id: browser=a8612333-0cd9-49af-83c4-579ec8c19432</msg>
+<arg>browser=chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-05-26T22:53:52.776633" elapsed="0.004293"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-05-26T22:53:57.988398" level="INFO">Successfully initialized new page object and opened url: http://www.automationpractice.pl/index.php</msg>
+<msg time="2024-05-26T22:53:57.988398" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>http://www.automationpractice.pl/index.php</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-05-26T22:53:52.780926" elapsed="5.207472"/>
+</kw>
+<status status="PASS" start="2024-05-26T22:53:52.776633" elapsed="5.218649"/>
+</kw>
+<kw name="Click Menu Woman" owner="Menu">
+<kw name="Click" owner="Browser">
+<msg time="2024-05-26T22:53:57.995282" level="INFO">Clicks the element 'xpath=//*[@id="block_top_menu"]/ul/li[1]/a'.</msg>
+<arg>xpath=//*[@id="block_top_menu"]/ul/li[1]/a</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-26T22:53:57.995282" elapsed="0.792681"/>
+</kw>
+<status status="PASS" start="2024-05-26T22:53:57.995282" elapsed="0.792681"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2024-05-26T22:53:59.865551" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-3.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-3.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2024-05-26T22:53:58.787963" elapsed="1.077588"/>
+</kw>
+<status status="PASS" start="2024-05-26T22:53:52.767887" elapsed="7.097664"/>
+</test>
+<doc>Cenário de menu</doc>
+<status status="PASS" start="2024-05-26T22:53:52.743435" elapsed="7.292813"/>
+</suite>
+<suite id="s1-s3" name="Signup" source="C:\Users\55119\Pictures\testes-processo-seletivo\tests\signup.robot">
+<test id="s1-s3-t1" name="Validar sinup com sucesso" line="13">
+<kw name="Get User Fake Account" owner="Account">
+<msg time="2024-05-26T22:54:00.089613" level="INFO">${account} = {'email': 'theodoronovais@example.org', 'name': 'Ana Beatriz Lopes', 'senha': &lt;bound method Provider.password of &lt;faker.providers.misc.en_US.Provider object at 0x0000018F1AC6C200&gt;&gt;}</msg>
+<var>${account}</var>
+<status status="PASS" start="2024-05-26T22:54:00.089613" elapsed="0.000000"/>
+</kw>
+<kw name="Open browser" owner="base">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-05-26T22:54:00.089613" level="INFO">Switching browser to browser=a8612333-0cd9-49af-83c4-579ec8c19432</msg>
+<msg time="2024-05-26T22:54:00.096725" level="INFO">Successfully changed active browser: browser=a8612333-0cd9-49af-83c4-579ec8c19432</msg>
+<msg time="2024-05-26T22:54:00.096725" level="INFO">Reusing existing browser with id: browser=a8612333-0cd9-49af-83c4-579ec8c19432</msg>
+<arg>browser=chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-05-26T22:54:00.089613" elapsed="0.007112"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-05-26T22:54:05.682195" level="INFO">Successfully initialized new page object and opened url: http://www.automationpractice.pl/index.php</msg>
+<msg time="2024-05-26T22:54:05.682195" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>http://www.automationpractice.pl/index.php</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-05-26T22:54:00.096725" elapsed="5.585470"/>
+</kw>
+<status status="PASS" start="2024-05-26T22:54:00.089613" elapsed="5.592582"/>
+</kw>
+<kw name="Click Menu Login" owner="Login">
+<kw name="Click" owner="Browser">
+<msg time="2024-05-26T22:54:05.687675" level="INFO">Clicks the element 'css=.login'.</msg>
+<arg>css=.login</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-26T22:54:05.682195" elapsed="0.862368"/>
+</kw>
+<status status="PASS" start="2024-05-26T22:54:05.682195" elapsed="0.862368"/>
+</kw>
+<kw name="Fill Text Email" owner="Signup">
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-05-26T22:54:06.546717" level="INFO">Fills the text 'theodoronovais@example.org' in the given field.</msg>
+<arg>id=email_create</arg>
+<arg>${email}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-05-26T22:54:06.546717" elapsed="0.416253"/>
+</kw>
+<arg>${account}[email]</arg>
+<status status="PASS" start="2024-05-26T22:54:06.544563" elapsed="0.418971"/>
+</kw>
+<kw name="Click Create User" owner="Signup">
+<kw name="Click" owner="Browser">
+<msg time="2024-05-26T22:54:06.965794" level="INFO">Clicks the element 'id=SubmitCreate'.</msg>
+<arg>id=SubmitCreate</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-26T22:54:06.965184" elapsed="0.090797"/>
+</kw>
+<status status="PASS" start="2024-05-26T22:54:06.964614" elapsed="0.091367"/>
+</kw>
+<kw name="Fill Text in Signup" owner="Signup">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-26T22:54:12.058191" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-26T22:54:07.057632" elapsed="5.000559"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-05-26T22:54:12.061230" level="INFO">Fills the text 'Ana Beatriz Lopes' in the given field.</msg>
+<arg>id=customer_firstname</arg>
+<arg>${account}[name]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-05-26T22:54:12.059537" elapsed="0.053289"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-05-26T22:54:12.114573" level="INFO">Fills the text 'Ana Beatriz Lopes' in the given field.</msg>
+<arg>id=customer_lastname</arg>
+<arg>${account}[name]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-05-26T22:54:12.113392" elapsed="0.033498"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-05-26T22:54:12.148856" level="INFO">Fills the text '&lt;bound method Provider.password of &lt;faker.providers.misc.en_US.Provider object at 0x0000018F1AC6C200&gt;&gt;' in the given field.</msg>
+<arg>id=passwd</arg>
+<arg>${account}[senha]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-05-26T22:54:12.147456" elapsed="0.040373"/>
+</kw>
+<arg>${account}</arg>
+<status status="PASS" start="2024-05-26T22:54:07.057094" elapsed="5.130735"/>
+</kw>
+<kw name="Click in Submit Account" owner="Signup">
+<kw name="Click" owner="Browser">
+<msg time="2024-05-26T22:54:12.190020" level="INFO">Clicks the element 'id=submitAccount'.</msg>
+<arg>id=submitAccount</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-26T22:54:12.189472" elapsed="0.790000"/>
+</kw>
+<status status="PASS" start="2024-05-26T22:54:12.188925" elapsed="0.790547"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2024-05-26T22:54:13.279891" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-4.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-4.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2024-05-26T22:54:12.981765" elapsed="0.298471"/>
+</kw>
+<status status="PASS" start="2024-05-26T22:54:00.081612" elapsed="13.198624"/>
+</test>
+<test id="s1-s3-t2" name="Validar signup Invalid" line="33">
+<kw name="Get User Fake Account" owner="Account">
+<msg time="2024-05-26T22:54:13.420251" level="INFO">${account} = {'email': 'maya99@example.org', 'name': 'Samuel da Rosa', 'senha': &lt;bound method Provider.password of &lt;faker.providers.misc.en_US.Provider object at 0x0000018F1AC6C200&gt;&gt;}</msg>
+<var>${account}</var>
+<status status="PASS" start="2024-05-26T22:54:13.419990" elapsed="0.000261"/>
+</kw>
+<kw name="Open browser" owner="base">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-05-26T22:54:13.420251" level="INFO">Switching browser to browser=a8612333-0cd9-49af-83c4-579ec8c19432</msg>
+<msg time="2024-05-26T22:54:13.428256" level="INFO">Successfully changed active browser: browser=a8612333-0cd9-49af-83c4-579ec8c19432</msg>
+<msg time="2024-05-26T22:54:13.428256" level="INFO">Reusing existing browser with id: browser=a8612333-0cd9-49af-83c4-579ec8c19432</msg>
+<arg>browser=chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-05-26T22:54:13.420251" elapsed="0.008005"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-05-26T22:54:18.243902" level="INFO">Successfully initialized new page object and opened url: http://www.automationpractice.pl/index.php</msg>
+<msg time="2024-05-26T22:54:18.243902" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>http://www.automationpractice.pl/index.php</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-05-26T22:54:13.428256" elapsed="4.815646"/>
+</kw>
+<status status="PASS" start="2024-05-26T22:54:13.420251" elapsed="4.823651"/>
+</kw>
+<kw name="Click Menu Login" owner="Login">
+<kw name="Click" owner="Browser">
+<msg time="2024-05-26T22:54:18.243902" level="INFO">Clicks the element 'css=.login'.</msg>
+<arg>css=.login</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-26T22:54:18.243902" elapsed="0.907180"/>
+</kw>
+<status status="PASS" start="2024-05-26T22:54:18.243902" elapsed="0.907180"/>
+</kw>
+<kw name="Fill Text Email" owner="Signup">
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-05-26T22:54:19.151082" level="INFO">Fills the text 'maya99@example.org' in the given field.</msg>
+<arg>id=email_create</arg>
+<arg>${email}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-05-26T22:54:19.151082" elapsed="0.359223"/>
+</kw>
+<arg>${account}[email]</arg>
+<status status="PASS" start="2024-05-26T22:54:19.151082" elapsed="0.359223"/>
+</kw>
+<kw name="Click Create User" owner="Signup">
+<kw name="Click" owner="Browser">
+<msg time="2024-05-26T22:54:19.510305" level="INFO">Clicks the element 'id=SubmitCreate'.</msg>
+<arg>id=SubmitCreate</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-26T22:54:19.510305" elapsed="0.105250"/>
+</kw>
+<status status="PASS" start="2024-05-26T22:54:19.510305" elapsed="0.105790"/>
+</kw>
+<kw name="Obrigatory input" owner="Signup">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-26T22:54:24.617835" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-26T22:54:19.617757" elapsed="5.000078"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-05-26T22:54:24.619468" level="INFO">Fills the text 'Samuel da Rosa' in the given field.</msg>
+<arg>id=customer_firstname</arg>
+<arg>${account}[name]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-05-26T22:54:24.618378" elapsed="0.032295"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-05-26T22:54:24.653353" level="INFO">Fills the text 'Samuel da Rosa' in the given field.</msg>
+<arg>id=customer_lastname</arg>
+<arg>${account}[name]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-05-26T22:54:24.650673" elapsed="0.037960"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2024-05-26T22:54:24.737178" level="INFO">Text: '*Required field'</msg>
+<arg>xpath=//p[@class='pull-right required']</arg>
+<arg>equal</arg>
+<arg>*Required field</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-26T22:54:24.689185" elapsed="0.047993"/>
+</kw>
+<arg>${account}</arg>
+<status status="PASS" start="2024-05-26T22:54:19.616633" elapsed="5.121088"/>
+</kw>
+<kw name="Click in Submit Account" owner="Signup">
+<kw name="Click" owner="Browser">
+<msg time="2024-05-26T22:54:24.739879" level="INFO">Clicks the element 'id=submitAccount'.</msg>
+<arg>id=submitAccount</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-26T22:54:24.738808" elapsed="0.752305"/>
+</kw>
+<status status="PASS" start="2024-05-26T22:54:24.738278" elapsed="0.752835"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2024-05-26T22:54:25.801740" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-5.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-5.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2024-05-26T22:54:25.491113" elapsed="0.310710"/>
+</kw>
+<status status="PASS" start="2024-05-26T22:54:13.411409" elapsed="12.391020"/>
+</test>
+<doc>Cenário de signup</doc>
+<status status="PASS" start="2024-05-26T22:54:00.058230" elapsed="25.901723"/>
+</suite>
+<status status="PASS" start="2024-05-26T22:53:13.371012" elapsed="72.601935"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="Login &amp; Menu &amp; Signup">Login &amp; Menu &amp; Signup</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="Login">Login &amp; Menu &amp; Signup.Login</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2" name="Menu">Login &amp; Menu &amp; Signup.Menu</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s3" name="Signup">Login &amp; Menu &amp; Signup.Signup</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,16 @@
+stages:
+  - regression
+
+image: marketsquare/robotframework-browser
+
+run-regression-tests:
+    stage: regression
+    script:
+        - pip install robotframework
+        - pip install faker
+        - pip install pip install -U robotframework-browser
+        - rfbrowser init
+        - robot --outputdir reports tests/*.robot
+    artifacts:
+        paths:
+            - reports

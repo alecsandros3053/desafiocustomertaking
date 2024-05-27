@@ -1,0 +1,29 @@
+*** Processo seletivo ***
+
+- Criação de automação com robot framework 
+
+*** Instalação das ferramentas ***
+
+Python 3
+Node js
+Lib Faker para dados randomicos
+RobotFramework Browser
+
+
+*** Estrutura de pastas ***
+
+resources -> onde podemos colocar nossa pages, libs que criamos com codigo python
+
+resources/libs -> libs para dados fakes
+
+resources/pages -> padrão page object
+
+testes -> onde iremos criar nossos testes
+
+logs -> arquivos de logs/screenshots
+
+
+
+*** Execução dos casos de testes ***
+
+robot -d ./logs tests/*.robot
